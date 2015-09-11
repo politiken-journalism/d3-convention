@@ -1,0 +1,41 @@
+{
+  "name": "d3-convention",
+  "version": "1.0.0",
+  "description": "D3 Margin Convention encoded as an npm package",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "d3": "^3"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "standard": "^5.2.2",
+    "tape": "^4.2.0",
+    "tape-run": "^1.1.0"
+  },
+  "scripts": {
+    "pretest": "standard",
+    "test": "browserify test.js | tape-run",
+    "example": "wzrd --path=example example/index.js:bundle.js -- --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/politiken-journalism/d3-convention.git"
+  },
+  "keywords": [
+    "d3",
+    "convention",
+    "visualisation",
+    "visualization",
+    "viz"
+  ],
+  "author": "Emil Bay <emil.bay@pol.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/politiken-journalism/d3-convention/issues"
+  },
+  "homepage": "https://github.com/politiken-journalism/d3-convention#readme"
+}
