@@ -70,7 +70,6 @@ It will mutate the originally passed `opts` Object, with these properties:
   scene. It maps `[0, 1] -> [opts.innerHeight, 0]` (note the upside-downness)
 
 ```js
-c.margin
 {
   margin: {top: Number, right: Number, bottom: Number, left: Number},
   width: opts.width || 960,
@@ -79,7 +78,7 @@ c.margin
   innerWidth: Number,
   innerHeight: Number,
 
-  parent: d3.select(HTMLBodyElement),
+  parent: d3.select(opts.parent || HTMLBodyElement),
   svg: s3.select(SVGGElement),
 
   x: d3.scale.linear,
@@ -109,7 +108,6 @@ It differs from `d3-starterkit` in several ways:
 * This does not return any axis
 * `parentSel` is `parent`. This lets you pass whatever `d3.select` accepts, it
   being `Element`, selector or an existing `d3.select`ion
-*
 
 License
 -------
