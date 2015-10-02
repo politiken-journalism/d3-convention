@@ -82,8 +82,8 @@ test('Margin being a number', function (assert) {
   assert.equal(rectOffset.left, 30, '<g> is translated x')
   assert.equal(rectOffset.top, 30, '<g> is translated y')
 
-  assert.looseEqual(rectNode.attributes.x.value, 0, 'c.x(0) maps to 0')
-  assert.looseEqual(rectNode.attributes.y.value, 0, 'c.y(1) maps to 0')
+  assert.looseEqual(rectNode.attributes.x.value, 0, 'c.x(0) === 0')
+  assert.looseEqual(rectNode.attributes.y.value, 0, 'c.y(1) === 0')
 
   assert.equal(rectBBox.width, c.width, 'c.x(1) === c.width')
   assert.equal(rectBBox.height, c.height, 'c.y(0) === to c.height')
