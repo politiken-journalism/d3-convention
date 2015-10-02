@@ -1,6 +1,6 @@
 {
   "name": "d3-convention",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "D3 Margin Convention encoded as an npm package",
   "main": "index.js",
   "directories": {
