@@ -50,14 +50,13 @@ It will mutate the originally passed `opts` Object, with these properties:
 * `c.margin` is an Object with the properties `{top, right, bottom, left}` either
   the originally passed `opts.margin` object, an object expanded from the Number
   passed or the default `{top: 20, right: 10, bottom: 20, left: 10}`
-* `c.width` is a Number of the outer width **including** margin on the left and
-  right side. I find it's easier to reason about the full width of a SVG element
-  than having to continuously go back and forth between margins and inner width. Defaults to `960`
-* `c.height`, under the same constraints as `c.width`. Defaults to `500`
-* `c.innerWidth` the actual width of the "drawing scene". Calculated from
-  `c.width - c.margin.left - c.margin.right`. Default resolves to `940`
-* `c.innerHeight` the actual height of the "drawing scene". Calculated from
-  `c.height - c.margin.top - c.margin.bottom`. Default resolves to `460`
+* `c.width` is the "scene" width **excluding** margin on the left and
+  right side. Defaults to `960 - margin.left - margin.right = 940`
+* `c.height`, under the same constraints as `c.width`. Defaults to `460`
+* `c.outerWidth` the width of the SVG element. Calculated from
+  `c.width + c.margin.left + c.margin.right`. Default resolves to `960`
+* `c.outerHeight` the actual height of the "drawing scene". Calculated from
+  `c.height + c.margin.top + c.margin.bottom`. Default resolves to `500`
 * `c.parent` is either the passed `opts.parent` or a D3 selection with the `body`
   element. This is where the `c.svg` element is inserted, unless `opts.svg` is passed, in which case this property is ignored
 * `c.svg` is a newly inserted `<g>` element which is `translate`d. We will try
@@ -90,15 +89,7 @@ Notable Differences
 -------------------
 
 `d3-convention` was inspired by [Block #3019563](http://bl.ocks.org/mbostock/3019563)
-and [1wheel/d3-starterkit](https://github.com/1wheel/d3-starterkit), however it
-has some differences that are important to be aware of. It's different from the *Margin Convention Block* since `d3-convention` subtracts `margin` from the
-specified `width` and `height`, where in the block `width and `height` are defined
-as follows:
-
-> ```js
-var width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-```
+and [1wheel/d3-starterkit](https://github.com/1wheel/d3-starterkit).
 
 It differs from `d3-starterkit` in several ways:
 

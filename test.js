@@ -24,8 +24,8 @@ test('Basic usage with sane defaults', function (assert) {
     'Default `margin: 20px 10px`'
   )
 
-  assert.equal(c.width, 960, 'Default `width: 960px`')
-  assert.equal(c.height, 500, 'Default `height: 500px`')
+  assert.equal(c.width, 940, 'Default `width: 940px`')
+  assert.equal(c.height, 460, 'Default `height: 460px`')
 
   assert.equal(window.document.querySelector('svg').offsetWidth, 960, 'offsetWidth === width')
   assert.equal(window.document.querySelector('svg').offsetHeight, 500, 'offsetHeight === height')
@@ -85,8 +85,8 @@ test('Margin being a number', function (assert) {
   assert.looseEqual(rectNode.attributes.x.value, 0, 'c.x(0) maps to 0')
   assert.looseEqual(rectNode.attributes.y.value, 0, 'c.y(1) maps to 0')
 
-  assert.equal(rectBBox.width, 900, 'c.x(1) maps to 940 === c.innerHeight')
-  assert.equal(rectBBox.height, 440, 'c.y(0) maps 460 === to c.innerHeight')
+  assert.equal(rectBBox.width, c.width, 'c.x(1) === c.width')
+  assert.equal(rectBBox.height, c.height, 'c.y(0) === to c.height')
 
   assert.end()
 })
